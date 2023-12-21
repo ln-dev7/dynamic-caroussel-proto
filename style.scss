@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&display=swap");
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: "Bebas Neue", sans-serif;
+  // font-family: "Inter", sans-serif;
+}
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+body {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+span {
+  font-family: "Inter", sans-serif;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  height: 100vh;
+  background: #c28159;
+  // transition-property: background;
+  // transition-duration: 0.5s;
+  // C28159 - 4D9CAA - 48582B - 184261 - 111110
+  &-left {
+    width: 70%;
+    height: 100%;
+    flex-shrink: 0;
+    .main-text {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 25vw 0 100px;
+      &::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: #00000085;
+        z-index: 2;
+      }
+      .line {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        opacity: 0.4;
+        margin-left: 10px;
+        z-index: 3;
+      }
+      .position {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin: 20px 0;
+        z-index: 3;
+      }
+      h1 {
+        font-size: 60px;
+        line-height: 60px;
+        z-index: 3;
+      }
+      p {
+        font-size: 16px;
+        opacity: 0.7;
+        line-height: 24px;
+        margin: 20px 0;
+        z-index: 3;
+      }
+      &-one {
+        background-image: url("/bg-1.png");
+      }
+      &-two {
+        background-image: url("/bg-2.png");
+      }
+      &-three {
+        background-image: url("/bg-3.png");
+      }
+      &-four {
+        background-image: url("/bg-4.png");
+      }
+      &-five {
+        background-image: url("/bg-5.png");
+      }
+    }
+  }
+  &-right {
+    width: 30%;
+    flex-shrink: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    .main-images {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-right: -1750px;
+      transform: translateX(0);
+      //transform: translateX(-490px);
+      .main-image{
+        width: 488px;
+        height: 388px;
+        border-radius: 16px;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .main-paginations {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      margin-left: -33.5vw;
+      &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        div{
+          cursor: pointer;
+        }
+      }
+      &__pages {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        span {
+          opacity: 0.7;
+          display: block;
+        }
+        &-page {
+          overflow: hidden;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
+
+#app-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1080px) {
+  #app-desktop {
+    display: none;
+  }
+  #app-mobile {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+
+    h2 {
+      font-size: clamp(3rem, 2.1rem + 1vw, 4.5rem);
+      letter-spacing: 0rem;
+      line-height: 1.2;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+      color: #191c1e;
+    }
+
+    a,
+    span {
+      color: #191c1e;
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 1.3rem;
+      text-decoration: underline;
+    }
+  }
+}
